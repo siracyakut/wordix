@@ -6,7 +6,7 @@ export default function AdminHeader() {
     <div className="w-full text-center rounded-md bg-white/10 p-5 grid gap-y-4 md:flex md:items-center md:justify-between mb-4">
       <div className="grid gap-y-4 md:flex md:items-center md:gap-x-8">
         <NavLink
-          to="/admin/"
+          to="/admin"
           end={true}
           className={({ isActive }) =>
             classNames(

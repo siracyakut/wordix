@@ -55,6 +55,9 @@ export default function ResultItem({ item, userAnswers, answers, index }) {
           >
             <Disclosure.Panel className="flex flex-col gap-2 text-sm text-center border-2 border-t-0 border-light dark:border-zinc-500 rounded-b p-2.5">
               <p>
+                <b>Soru:</b> {item.question}
+              </p>
+              <p>
                 <b>Doğru cevap:</b> {item.answer}
               </p>
               {answers.at(index) && (

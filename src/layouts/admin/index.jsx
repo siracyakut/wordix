@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useModal } from "~/store/modal/hooks";
 import { useQuery } from "react-query";
 import { authService } from "~/services/auth";
@@ -24,6 +24,10 @@ export default function AdminLayout() {
       setIsOk(true);
     },
   });
+
+  useEffect(() => {
+    document.documentElement.className = "dark";
+  }, []);
 
   return !isOk ? (
     <Loading />

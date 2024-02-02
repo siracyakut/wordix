@@ -2,25 +2,27 @@ import Yup from "~/validations/yup";
 
 export const editQuestionSchema = Yup.object().shape({
   question: Yup.string().required(),
-  letter: Yup.string().min(1).max(1).required(),
+  letter: Yup.string().length(1, "Bu alan 1 karakter olmalı.").required(),
   answer: Yup.string().required(),
 });
 
 export const editUserSchema = Yup.object().shape({
-  email: Yup.string().email("Geçerli bir e-mail adresi girin.").required(),
+  email: Yup.string()
+    .email("Geçerli bir e-mail adresi girmelisiniz.")
+    .required(),
   solvedCount: Yup.number()
-    .typeError("Sayı olmalı")
-    .positive("0'dan yüksek olmalı")
-    .integer("0'dan yüksek olmalı")
+    .typeError("Bir sayı girmelisiniz.")
+    .positive("Girilen sayı pozitif olmalı.")
+    .integer("Bir tamsayı girmelisiniz.")
     .required(),
   trueCount: Yup.number()
-    .typeError("Sayı olmalı")
-    .positive("0'dan yüksek olmalı")
-    .integer("0'dan yüksek olmalı")
+    .typeError("Bir sayı girmelisiniz.")
+    .positive("Girilen sayı pozitif olmalı.")
+    .integer("Bir tamsayı girmelisiniz.")
     .required(),
   falseCount: Yup.number()
-    .typeError("Sayı olmalı")
-    .positive("0'dan yüksek olmalı")
-    .integer("0'dan yüksek olmalı")
+    .typeError("Bir sayı girmelisiniz.")
+    .positive("Girilen sayı pozitif olmalı.")
+    .integer("Bir tamsayı girmelisiniz.")
     .required(),
 });

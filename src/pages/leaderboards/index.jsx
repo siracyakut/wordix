@@ -17,7 +17,7 @@ export default function Leaderboards() {
       animate={{ opacity: 1, translateY: 0 }}
       className="w-full flex flex-col items-center justify-center gap-8"
     >
-      <div className="flex items-center gap-x-4 text-orange-500 dark:text-yellow-500">
+      <div className="flex items-center justify-center gap-x-4 text-orange-500 dark:text-yellow-500">
         <MdLeaderboard size={40} />
         <p className="font-extrabold uppercase text-3xl text-center">
           Liderlik Tablosu

@@ -4,3 +4,9 @@ export const calculateScore = (trueCount, jokerCount) => {
   totalPoint -= Math.min(jokerCount, totalPoint);
   return totalPoint;
 };
+
+export const calculateScoreWithTime = (mills) => {
+  let sec = mills / 1000;
+  let score = 3.85 - (sec * 3.85) / 11.5;
+  return score < 0 ? 0 : score;
+};
