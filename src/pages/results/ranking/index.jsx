@@ -118,7 +118,7 @@ export default function ResultRanking() {
                   </p>
                   <p>
                     <span
-                      onClick={() => setModal("login")}
+                      onClick={() => setModal("register")}
                       className="hover:text-gray-500 hover:underline cursor-pointer"
                     >
                       Buraya tıklayarak

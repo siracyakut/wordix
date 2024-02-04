@@ -1,31 +1,14 @@
-import Button from "~/components/button";
-import { useTheme } from "~/store/app/hooks";
-import { IoIosMoon, IoIosSunny } from "react-icons/io";
-import { setTheme } from "~/store/app/actions";
+import useBreakpoint from "~/hooks/use-breakpoint";
+import ThemeSwitcher from "~/layouts/main/footer/theme-switcher";
 
 export default function Footer() {
-  const theme = useTheme();
+  const breakpoint = useBreakpoint();
 
   return (
     <div className="grid gap-y-4 md:flex md:items-center md:justify-between w-full p-[25px] text-center border-t-[3px] border-light dark:border-zinc-500">
-      <Button
-        className="md:w-52"
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        type="button"
-        component="button"
-      >
-        {theme === "dark" ? (
-          <>
-            <IoIosSunny size={20} />
-            <p>Açık Tema'ya Geç</p>
-          </>
-        ) : (
-          <>
-            <IoIosMoon size={20} />
-            <p>Koyu Tema'ya Geç</p>
-          </>
-        )}
-      </Button>
+      <div className="hidden md:block md:w-52">
+        {breakpoint === "desktop" && <ThemeSwitcher />}
+      </div>
       <div className="flex flex-col">
         <p>
           Copyright &copy; {new Date().getFullYear()}{" "}
@@ -35,7 +18,9 @@ export default function Footer() {
           version {import.meta.env.VITE_GAME_VERSION} open-beta
         </p>
       </div>
-      <div className="md:w-52" />
+      <div className="w-full grid md:w-52">
+        {breakpoint === "mobile" && <ThemeSwitcher />}
+      </div>
     </div>
   );
 }
